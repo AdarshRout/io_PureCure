@@ -5,7 +5,7 @@ import speech_recognition as sr
 
 # Add the paths to the module directories
 sys.path.append('./translate_module')
-sys.path.append('./chatg_module')
+sys.path.append('./chat_module')
 
 from translate_module.translator import TranslationService
 from chat_module.chatbot import ChatBot
