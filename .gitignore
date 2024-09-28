@@ -1,3 +1,5 @@
 /venv
 /.env
-
+/newenv
+/chat_module/chatenv
+/translate_module/transenv
