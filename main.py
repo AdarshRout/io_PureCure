@@ -1,22 +1,17 @@
-
-# main.py
 import sys
 import os
 import speech_recognition as sr
-import pygame
+
 
 # Add the paths to the module directories
 sys.path.append('./translate_module')
-sys.path.append('./chat_module')
+sys.path.append('./chatg_module')
 
 from translate_module.translator import TranslationService
 from chat_module.chatbot import ChatBot
 
 # Initialize speech recognition
 r = sr.Recognizer()
-
-# Initialize pygame for audio playback
-pygame.mixer.init()
 
 def get_audio_input(language_code):
     try:
@@ -34,19 +29,12 @@ def get_audio_input(language_code):
         print("Sorry, I didn't receive any audio input. Please try again.")
         return get_audio_input(language_code)
 
-def play_audio(file_path):
-    pygame.mixer.music.load(file_path)
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
-
 def handle_medical_conversation(language_code):
     translator = TranslationService()
     chatbot = ChatBot()
 
     initial_prompt = translator.translate("Please describe your problem or symptoms.", language_code)
-    audio_file = translator.text_to_speech(initial_prompt, language_code)
-    play_audio(audio_file)
+    translator.text_to_speech(initial_prompt, language_code)
     print(f"PureCure BOT: {initial_prompt}")
     
     while True:
@@ -60,13 +48,11 @@ def handle_medical_conversation(language_code):
         print(f"Assistant response: {assistant_response}")
         print(f"Translated response: {translated_response}")
         
-        audio_file = translator.text_to_speech(translated_response, language_code)
-        play_audio(audio_file)
+        translator.text_to_speech(translated_response, language_code)
 
         if "thank you" in translated_input.lower() or "goodbye" in translated_input.lower():
             farewell = translator.translate("You're welcome. Take care and get well soon!", language_code)
-            audio_file = translator.text_to_speech(farewell, language_code)
-            play_audio(audio_file)
+            translator.text_to_speech(farewell, language_code)
             break
 
 if __name__ == "__main__":
