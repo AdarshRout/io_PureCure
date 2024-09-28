@@ -43,7 +43,7 @@ def handle_medical_conversation():
     messages = [{"role": "system", "content": "You are a virtual medical assistant so act accordingly, ask the patient name . Based on the user's symptoms, ask relevant follow-up questions, suggest possible illnesses, and recommend steps for recovery. Ask one question at a time and wait for the user's response before proceeding. But dont stretch it too long and try to give the diagnosis within 5 questions from the information whatever you have got"}]
 
     generate_audio_response("Please describe your problem or symptoms.")
-    print("PureCure BOT: Please describe your problem or symptoms.")
+    print("PureCure BOT: What is your name ? Please describe your problem or symptoms.")
     
     while True:
         user_input = get_audio_input()
