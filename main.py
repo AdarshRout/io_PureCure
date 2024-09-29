@@ -33,7 +33,7 @@ def handle_medical_conversation(language_code):
     translator = TranslationService()
     chatbot = ChatBot()
 
-    initial_prompt = translator.translate("Please describe your problem or symptoms.", language_code)
+    initial_prompt = translator.translate("Please tell your name & location then describe your problem or symptoms.", language_code)
     translator.text_to_speech(initial_prompt, language_code)
     print(f"PureCure BOT: {initial_prompt}")
     

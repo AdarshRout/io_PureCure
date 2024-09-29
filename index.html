@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Health Kiosk System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-info">
+            <img src="avatar.jpg" alt="User Avatar" class="avatar">
+            <h2>Shyam Lal</h2>
+            <p>Aadhar No: 8080 7850 6540</p>
+            <p>Address: Plot B/II - Kharif Street, Kolkata, India</p>
+            <p>Age: 63</p>
+            <p>Gender: Male</p>
+            <p>S/o: Kanhaiya Lal</p>
+        </div>
+        <div class="vital-signs">
+            <h3>Vital Signs</h3>
+            <p>Heart Rate: <span id="heartRate">78 BPM</span></p>
+            <p>Blood Pressure: <span id="bloodPressure">120/80 mmHg</span></p>
+            <p>Oxygen Levels: <span id="oxygenLevel">98%</span></p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Medical Health Kiosk System</h1>
+
+        <div class="voice-container">
+            <div id="voiceButton" class="voice-button">
+                <img src="mic.jpg" alt="Microphone" class="mic-icon">
+            </div>
+            <p id="speechText" class="speech-text">Your speech will appear here...</p>
+        </div>
+
+        <div class="diagnosis">
+            <h2>AI Diagnosis</h2>
+            <p id="diagnosisResult">Awaiting diagnosis...</p>
+        </div>
+
+        <div class="remote-consultancy">
+            <h2>Remote Consultancy</h2>
+            <button class="consult-button">Start Consultation</button>
+            <p id="consultationStatus">Not Connected</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
