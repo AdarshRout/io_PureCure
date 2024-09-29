@@ -21,3 +21,6 @@ class TranslationService:
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
+
+
+            
